@@ -12,7 +12,7 @@ The proposed framework combines:
 The goal is to **predict node influence efficiently** and select high-quality seed sets without expensive simulations.
 
 This project is based on my undergraduate thesis:  
-**"Influence Maximization in Social Networks based on Graph Neural Networks"** :contentReference[oaicite:0]{index=0}
+**"Influence Maximization in Social Networks based on Graph Neural Networks"** 
 
 ---
 
@@ -20,12 +20,12 @@ This project is based on my undergraduate thesis:
 
 Given a graph \( G = (V, E) \), the task is to select a set of \( k \) seed nodes such that the expected spread of influence is maximized:
 
-\[
+$$
 S^* = \arg\max_{|S|=k} \sigma(S)
-\]
+$$
 
 Traditional methods rely on Monte Carlo simulations, which are computationally expensive.  
-This project reformulates the problem as a **learning-based regression task** using GNN.
+This project reformulates the problem as a learning-based regression task using GNN.
 
 ---
 
@@ -93,12 +93,12 @@ Train the k-Hop GNN model:
 python train_khop.py
 ```
 
-Key parameters:
+Key hyperparameters:
 
-k: number of hops
-hidden_dim: hidden layer size
-dropout: regularization
-batch_size: training batch size
+1. k: number of propagation hops
+2. hidden_dim: hidden layer dimension
+3. dropout: regularization rate
+4. batch_size: training batch size
 
 The model is trained using MSE loss to regress influence scores.
 
@@ -112,8 +112,30 @@ python celf_khop.py
 
 Pipeline:
 
-Load trained GNN
-Generate candidate nodes (degree filtering)
-Use GNN to estimate marginal gain
-Apply CELF lazy greedy selection
-Evaluate with Independent Cascade model
+1. Load trained GNN
+2. Generate candidate nodes (degree filtering)
+3. Use GNN to estimate marginal gain
+4. Apply CELF lazy greedy selection
+5. Evaluate with Independent Cascade model
+
+## Applications
+
+Viral marketing
+Social recommendation systems
+Information diffusion modeling
+Epidemic spread analysis
+
+## Requirements
+
+Python 3.x
+PyTorch
+NumPy
+SciPy
+pandas
+tqdm
+
+## Future Work
+
+1. Extend to dynamic / temporal graphs
+2. Incorporate heterogeneous graph structures
+3. Improve scalability for large-scale real-world networks
