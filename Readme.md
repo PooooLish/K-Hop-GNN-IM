@@ -120,18 +120,18 @@ Pipeline:
 
 ## Applications
 
-Viral marketing
-Social recommendation systems
-Information diffusion modeling
-Epidemic spread analysis
+1. Viral marketing
+2. Social recommendation systems
+3. Information diffusion modeling
+4. Epidemic spread analysis
 
 ## Requirements
 
-Python 3.x
-PyTorch
-NumPy
-SciPy
-pandas
+Python 3.x /
+PyTorch /
+NumPy /
+SciPy /
+pandas /
 tqdm
 
 ## Future Work
